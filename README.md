@@ -117,7 +117,7 @@ dulces-petalos/
 │
 ├── public/              → Archivos estáticos (opcional)
 ├── docs/                → Documentación del proyecto (PDF, imágenes...)
-├── index.html           → HTML principal (fuera de `src/`)
+├── index.html           → HTML principal 
 ├── package.json         → Configuración de npm y scripts
 ├── vite.config.js       → Configuración de Vite
 ├── README.md
