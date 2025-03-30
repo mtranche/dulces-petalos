@@ -108,10 +108,13 @@ GET https://dulces-petalos.jakala.es/api/v1/product/:id
 
 ## 📎 Recursos
 
-- Figma del diseño: Acceso al diseño [aquí](https://www.figma.com/design/3XIgWJd1qoOM5FLgHQpQzX/Dulces-P%C3%A9talos?node-id=1-3&t=idQ0aIsMDUgfM8JR-0)
+- Figma del diseño: Acceso al diseño [aquí](https://www.figma.com/design/3XIgWJd1qoOM5FLgHQpQzX/Dulces-P%C3%A9talos)
 
 - [Documentación técnica PDF incluida en /doc](./docs/Dulces_petalos-technical_task.pdf)
 
 ## 🧑‍💻 Autor
-Creado por Marta Tranche Bouzón. mtranche en GitHub.
+Creado por Marta Tranche Bouzón.
+
+mtranche en GitHub.
+
 mtranche@gmail.com
