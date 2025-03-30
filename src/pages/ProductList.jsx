@@ -41,7 +41,7 @@ function ProductList() {
         <Search query={query} onChange={setQuery} aria-label="Search products" />
 
         {isLoading && <p aria-live="polite">Cargando productos...</p>}
-        {error && <p style={{ color: '#b80000;' }} role="alert">⚠️ {error}</p>}
+        {error && <p style={{ color: '#b80000' }} role="alert">⚠️ {error}</p>}
 
         {!isLoading && !error && (
           <div className="product-grid" role="region" aria-label="Product list">

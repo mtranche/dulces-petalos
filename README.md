@@ -1,5 +1,5 @@
 # Tarea Técnica de Frontent de JAKALA
-# 🌸 Dulces Pétalos - Catálogo de Floristería
+## 🌸 Dulces Pétalos - Catálogo de Floristería
 
 Aplicación web desarrollada con **React + Vite** para mostrar el catálogo de productos de la floristería Dulces Pétalos.  
 Incluye vista de listado y detalle de cada planta, con diseño responsive y accesible, siguiendo el mockup proporcionado en Figma.
@@ -7,7 +7,7 @@ Incluye vista de listado y detalle de cada planta, con diseño responsive y acce
 ---
 
 ## 🛠️ Tecnologías utilizadas
-
+- [nodejs](https://nodejs.org)
 - [React](https://reactjs.org/)
 - [Vite](https://vitejs.dev/)
 - [SASS](https://sass-lang.com/)
@@ -16,15 +16,33 @@ Incluye vista de listado y detalle de cada planta, con diseño responsive y acce
 
 ---
 
+## 📎 Recursos
+
+- Figma del diseño: Acceso al diseño [aquí](https://www.figma.com/design/3XIgWJd1qoOM5FLgHQpQzX/Dulces-P%C3%A9talos)
+
+- [Documentación técnica PDF incluida en /doc](./docs/Dulces_petalos-technical_task.pdf)
+
+
+---
+
 ## ✅ Paso previo: Instalar Node.js y npm
 
-### 🧭 Instalación recomendada
+### 🧭 Instalación recomendada para Windows
 
 1. Visita 👉 [https://nodejs.org](https://nodejs.org)
 2. Descarga la versión **LTS (Long Term Support)**
 3. Instálala como cualquier otra aplicación
 
 Esto instalará **Node.js** y **npm** automáticamente.
+
+---
+
+### 🐧 Instalación recomendada para Ubuntu (Linux)
+
+```bash
+sudo apt update
+sudo apt install nodejs npm
+```
 
 ---
 
@@ -36,6 +54,15 @@ Abre tu terminal y escribe:
 node -v
 npm -v
 ```
+
+Deberías ver algo como esto
+
+```bash
+v20.x.x
+10.x.x
+```
+
+---
 
 ## 🚀 Cómo clonar y arrancar el proyecto
 
@@ -59,12 +86,14 @@ npm run dev
 ```
 Esto levantará el proyecto en http://localhost:5173 (o el puerto que indique Vite).
 
+---
+
 ## 🧪 Cómo ejecutar los tests
 
 El proyecto utiliza Vitest. Para ejecutar los tests:
 
 ```bash
-npm run test
+npm vitest
 ```
 
 Para ver los tests en modo interactivo (watch mode):
@@ -79,22 +108,32 @@ Para abrir la UI para ver los tests visualmente:
 npx vitest --ui
 ```
 
+---
+
 ## 📁 Estructura del proyecto
 
 ```plaintext
-src/
+dulces-petalos/
 │
-├── assets/              → Imágenes y logos
-├── components/          → Componentes reutilizables (Card, Header, Search, etc.)
-├── pages/               → Vistas principales (ProductList, ProductDetail)
-├── styles/              → Estilos organizados por base / components / pages
-│   ├── base/            → Tokens, variables, tipografía
-│   ├── components/      → Estilos de cada componente
-│   └── pages/           → Estilos específicos por página
-├── App.jsx              → Componente principal con routing
-├── main.jsx             → Punto de entrada
-└── index.html           → HTML principal
-```
+├── public/              → Archivos estáticos (opcional)
+├── docs/                → Documentación del proyecto (PDF, imágenes...)
+├── index.html           → HTML principal (fuera de `src/`)
+├── package.json         → Configuración de npm y scripts
+├── vite.config.js       → Configuración de Vite
+├── README.md
+│
+└── src/
+    ├── assets/              → Imágenes y logos
+    ├── components/          → Componentes reutilizables (Card, Header, Search, etc.)
+    ├── pages/               → Vistas principales (ProductList, ProductDetail)
+    ├── styles/              → Estilos organizados por base / components / pages
+    │   ├── base/            → Tokens, variables, tipografía
+    │   ├── components/      → Estilos de cada componente
+    │   └── pages/           → Estilos específicos por página
+    ├── App.jsx              → Componente principal con routing
+    └── main.jsx             → Punto de entrada (React + Vite)
+
+---
 
 ## ✅ Funcionalidades implementadas
 
@@ -110,6 +149,8 @@ src/
 
 - Estilos modulados con SASS y variables personalizadas.
 
+---
+
 ## 📌 API utilizada
 Todos los productos se obtienen desde la API proporcionada:
 
@@ -117,6 +158,8 @@ Todos los productos se obtienen desde la API proporcionada:
 GET https://dulces-petalos.jakala.es/api/v1/product
 GET https://dulces-petalos.jakala.es/api/v1/product/:id
 ```
+
+---
 
 ## 🧼 Scripts adicionales
 
@@ -127,15 +170,9 @@ GET https://dulces-petalos.jakala.es/api/v1/product/:id
 | `npm run lint`   | (Si se configura) Linting opcional          |
 | `npm run test`   | Ejecuta los tests con Vitest                |
 
-## 📎 Recursos
-
-- Figma del diseño: Acceso al diseño [aquí](https://www.figma.com/design/3XIgWJd1qoOM5FLgHQpQzX/Dulces-P%C3%A9talos)
-
-- [Documentación técnica PDF incluida en /doc](./docs/Dulces_petalos-technical_task.pdf)
+---
 
 ## 🧑‍💻 Autor
 Creado por Marta Tranche Bouzón.
-
-mtranche en GitHub.
 
 mtranche@gmail.com
