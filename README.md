@@ -1,12 +1,115 @@
-# React + Vite
+# Esta es la tarea técnica de Frontend de JAKALA
+# 🌸 Dulces Pétalos - Catálogo de Floristería
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React + Vite** para mostrar el catálogo de productos de la floristería Dulces Pétalos.  
+Incluye vista de listado y detalle de cada planta, con diseño responsive y accesible, siguiendo el mockup proporcionado en Figma.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [SASS](https://sass-lang.com/)
+- [React Router](https://reactrouter.com/)
+- [Vitest](https://vitest.dev/) + [React Testing Library](https://testing-library.com/)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Cómo clonar y arrancar el proyecto
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/tu-usuario/dulces-petalos.git
+cd dulces-petalos
+```
+
+### 2. Instalar dependencias
+
+```bash
+npm install
+```
+
+### 3. Iniciar el proyecto en desarrollo
+
+```bash
+npm run dev
+```
+Esto levantará el proyecto en http://localhost:5173 (o el puerto que indique Vite).
+
+## 🧪 Cómo ejecutar los tests
+
+El proyecto utiliza Vitest. Para ejecutar los tests:
+
+```bash
+npm run test
+```
+
+Para ver los tests en modo interactivo (watch mode):
+
+```bash
+npm run test -- --watch
+```
+
+Para abrir la UI para ver los tests visualmente:
+
+```bash
+npm run test -- --ui
+```
+
+## 📁 Estructura del proyecto
+
+src/
+│
+├── assets/              → Imágenes y logos
+├── components/          → Componentes reutilizables (Card, Header, Search, etc.)
+├── pages/               → Vistas principales (ProductList, ProductDetail)
+├── styles/              → Estilos organizados por base / components / pages
+│   ├── base/            → Tokens, variables, tipografía
+│   ├── components/      → Estilos de cada componente
+│   └── pages/           → Estilos específicos por página
+├── App.jsx              → Componente principal con routing
+├── main.jsx             → Punto de entrada
+└── index.html           → HTML principal
+
+## ✅ Funcionalidades implementadas
+
+- Listado de productos con buscador en tiempo real.
+
+- Detalle de cada producto con imagen, descripción y ficha técnica.
+
+- Breadcrumb para navegación.
+
+- Responsive design (desktop y mobile).
+
+- Accesibilidad básica con etiquetas semánticas, roles y descripciones.
+
+- Estilos modulados con SASS y variables personalizadas.
+
+## 📌 API utilizada
+Todos los productos se obtienen desde la API proporcionada:
+
+```bash
+GET https://dulces-petalos.jakala.es/api/v1/product
+GET https://dulces-petalos.jakala.es/api/v1/product/:id
+```
+
+## 🧼 Scripts adicionales
+
+| Comando          | Descripción                                 |
+|------------------|---------------------------------------------|
+| `npm run build`  | Genera la versión de producción             |
+| `npm run preview`| Sirve la app de producción local            |
+| `npm run lint`   | (Si se configura) Linting opcional          |
+| `npm run test`   | Ejecuta los tests con Vitest                |
+
+## 📎 Recursos
+
+- Figma del diseño: Acceso al diseño [aquí](https://www.figma.com/design/3XIgWJd1qoOM5FLgHQpQzX/Dulces-P%C3%A9talos?node-id=1-3&t=idQ0aIsMDUgfM8JR-0)
+
+- [Documentación técnica PDF incluida en /doc](./docs/Dulces_petalos-technical_task.pdf)
+
+## 🧑‍💻 Autor
+Creado por Marta Tranche Bouzón. mtranche en GitHub.
+mtranche@gmail.com
