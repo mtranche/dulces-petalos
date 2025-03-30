@@ -24,16 +24,16 @@ build/
 *.sln
 *.sw?
 
-# Variables de entorno
+# envirmoent variables
 .env
 .env.local
 
 
-# Archivos de cache
+# cahce files
 .cache/
 .next/
 
-# Reportes de pruebas
+# coverage file
 coverage/
 *-lock.json
 report.json
