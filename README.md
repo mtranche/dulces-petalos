@@ -1,4 +1,4 @@
-# Esta es la tarea técnica de Frontend de JAKALA
+# Tarea Técnica de Frontent de JAKALA
 # 🌸 Dulces Pétalos - Catálogo de Floristería
 
 Aplicación web desarrollada con **React + Vite** para mostrar el catálogo de productos de la floristería Dulces Pétalos.  
@@ -49,13 +49,13 @@ npm run test
 Para ver los tests en modo interactivo (watch mode):
 
 ```bash
-npm run test -- --watch
+npx vitest --watch
 ```
 
 Para abrir la UI para ver los tests visualmente:
 
 ```bash
-npm run test -- --ui
+npx vitest --ui
 ```
 
 ## 📁 Estructura del proyecto
