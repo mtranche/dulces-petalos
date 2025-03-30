@@ -1,0 +1,119 @@
+@use "../base/vars" as *;
+
+.product-detail {
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;   
+  background-color: $neutral-200;
+  
+  .detail-content {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;  
+    margin-top: 14px;
+    gap:$space-3xl;
+
+    .image {
+      img {
+        width: 580px;
+        height: 905px;
+        border-radius: 24px;
+        object-fit: cover;
+      }
+    }
+
+    .info {
+      flex: 1 1 560px;
+      display: flex;
+      flex-direction: column;
+
+      .binomial {
+        color: $neutral-800;
+      }
+
+      .price {
+        margin-top:$space-lg;
+      }
+
+      .details {
+        list-style: none;
+        padding-left: $space-md;
+        color: $neutral-1000;
+
+        li {
+          margin-bottom: $space-2xs;
+        }
+      }
+
+      .add-to-cart {
+        margin-top: 16px;
+        background-color: #6b123b;
+        color: white;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        align-self: flex-start;
+        transition: background 0.2s ease;
+
+        &:hover {
+          background-color: #520d2e;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail {
+    padding: 0 $space-md;   
+
+    .detail-content {
+      flex-direction: column;
+      gap: $space-2xl;
+      margin-top: 0;   
+
+      .image img {
+        width: calc(100vw - 32px);
+        height: auto;
+        max-height: 250px;
+        border-radius: $radius-4xl;
+      }
+
+      .info {
+        width: 100%;
+
+        h1 {
+          margin: 6px 0 12px 0;
+        }
+
+        .price {
+          margin-top: $space-xl;
+        }
+
+        .details {
+          padding-left: 0;
+          margin-top: $space-3xl;
+
+          li {
+            margin-bottom:$space-md;
+          }
+        }
+
+        .add-to-cart {
+          width: 100%;
+          text-align: center;
+          margin-top: $space-3xs;
+          font-size: 14px;
+          padding: 12px;
+        }
+      }
+    }
+  }
+}
+

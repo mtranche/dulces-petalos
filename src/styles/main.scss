@@ -1,0 +1,100 @@
+@use './base/vars' as *;
+
+@use './components/header';
+@use './components/card';
+@use './components/search';
+@use './components/breadcrumb';
+
+@use './pages/productList';
+@use './pages/productDetail';
+
+:root {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;  
+}
+
+body {
+  font-family: DM Sans;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px; 
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.bodyb2 {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.bodyb3{
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.bodyb4{
+  font-size: 10px;
+  line-height: 15px;
+}
+
+h1,
+h2,
+h3,
+h4{
+  font-family: Nunito;
+  font-weight: 700;
+  letter-spacing: 0px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 72px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 60px;
+}
+
+h3 {
+  font-size: 34px;
+  line-height: 51px;
+}
+
+h4 {
+  font-size: 28px;
+  line-height: 42px;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+h6 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+p {
+  margin:0;
+  padding:0;
+}
+
+.http-error{  
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color:$error-400;
+}

@@ -1,0 +1,54 @@
+@use '../base/vars' as *;
+
+.container {
+  margin: 0 auto;
+  background-color: $neutral-200;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.content {
+  background-color: $neutral-200;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+      flex-direction: column;
+      align-items: center;
+      gap: $space-lg;
+      width: calc(100% - 40px);
+    }
+
+    .product-card { 
+      width: 361px;     
+
+      .product-image {       
+        width: 329px;
+        height: 300px;
+        border-radius:$radius-s;
+      }
+
+      .product-price {        
+        bottom: 27px;
+        left: 27px;
+      }
+
+      .go-to-button {
+        bottom: 27px;
+        right: 27px;
+      }
+    }
+  }
+

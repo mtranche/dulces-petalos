@@ -1,0 +1,21 @@
+@use '../base/vars' as *;
+
+.header {
+  padding:$space-2xs $space-3xs;
+  display: flex;
+  height: 54px;
+  justify-content: center;
+  align-items: center;
+  background-color: $neutral-100;
+  width: 100%;
+
+  a {
+    height: fit-content;
+  }
+}
+
+.logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
