@@ -21,7 +21,7 @@ Incluye vista de listado y detalle de cada planta, con diseño responsive y acce
 ### 1. Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/dulces-petalos.git
+git clone https://github.com/mtranche/dulces-petalos.git
 cd dulces-petalos
 ```
 
