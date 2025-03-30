@@ -60,6 +60,7 @@ npm run test -- --ui
 
 ## 📁 Estructura del proyecto
 
+```plaintext
 src/
 │
 ├── assets/              → Imágenes y logos
@@ -72,6 +73,7 @@ src/
 ├── App.jsx              → Componente principal con routing
 ├── main.jsx             → Punto de entrada
 └── index.html           → HTML principal
+```
 
 ## ✅ Funcionalidades implementadas
 
