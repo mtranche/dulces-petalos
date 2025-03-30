@@ -132,6 +132,7 @@ dulces-petalos/
     │   └── pages/           → Estilos específicos por página
     ├── App.jsx              → Componente principal con routing
     └── main.jsx             → Punto de entrada (React + Vite)
+```
 
 ---
 
