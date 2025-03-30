@@ -16,6 +16,27 @@ Incluye vista de listado y detalle de cada planta, con diseño responsive y acce
 
 ---
 
+## ✅ Paso previo: Instalar Node.js y npm
+
+### 🧭 Instalación recomendada
+
+1. Visita 👉 [https://nodejs.org](https://nodejs.org)
+2. Descarga la versión **LTS (Long Term Support)**
+3. Instálala como cualquier otra aplicación
+
+Esto instalará **Node.js** y **npm** automáticamente.
+
+---
+
+### 🧪 Verifica que la instalación fue correcta
+
+Abre tu terminal y escribe:
+
+```bash
+node -v
+npm -v
+```
+
 ## 🚀 Cómo clonar y arrancar el proyecto
 
 ### 1. Clonar el repositorio

@@ -35,4 +35,5 @@ build/
 
 # Reportes de pruebas
 coverage/
-*.json
+*-lock.json
+report.json
