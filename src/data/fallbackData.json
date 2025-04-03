@@ -4,7 +4,7 @@
     "name": "Petunia",
     "binomialName": "Petunia axillaris",
     "price": 5.45,
-    "imgUrl": "https://dulces-petalos.jakala.es/images/petuniaAxillaris.jpeg",
+    "imgUrl": "../../public/img/petuniaAxillaris.jpeg",
     "wateringsPerWeek": 1,
     "fertilizerType": "phosphorus",
     "heightInCm": 25
@@ -14,7 +14,7 @@
     "name": "Aloe",
     "binomialName": "Aloe vera",
     "price": 3.25,
-    "imgUrl": "https://dulces-petalos.jakala.es/images/aloeVera.jpeg",
+    "imgUrl": "../../public/img/aloeVera.jpeg",
     "wateringsPerWeek": 1,
     "fertilizerType": "phosphorus",
     "heightInCm": 15
@@ -24,7 +24,7 @@
     "name": "Elecho",
     "binomialName": "Pteridium Aquilinum",
     "price": 12.55,
-    "imgUrl": "https://dulces-petalos.jakala.es/images/pteridiumAquilinum.jpeg",
+    "imgUrl": "../../public/img/pteridiumAquilinum.jpeg",
     "wateringsPerWeek": 3,
     "fertilizerType": "nitrogen",
     "heightInCm": 85
