@@ -10,7 +10,6 @@ function ProductList() {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [usingLocalData, setUsingLocalData] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -27,7 +26,6 @@ function ProductList() {
       } catch (error) {        
           setError('⚠️ Error al obtener datos de la API');
           setProducts(fallbackData);
-          setUsingLocalData(true);
       } finally {
         setIsLoading(false);
       }
