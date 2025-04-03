@@ -10,7 +10,7 @@ function Search({ query, onChange }) {
         value={query}
         onChange={(e) => onChange(e.target.value)}
         style={{ backgroundImage: `url(${searchIcon})` }}
-        aria-label="Buscar en nuestra tienda"
+        aria-label="Busca en nuestra tienda"
         role="searchbox"
       />
     </div>

@@ -89,7 +89,7 @@ describe('ProductList Component', () => {
     });
   
     // Simula un filtro de búsqueda
-    const searchInput = screen.getByRole('searchbox', { name: /buscar en nuestra tienda/i });
+    const searchInput = screen.getByRole('searchbox', { name: /busca en nuestra tienda/i });
     fireEvent.change(searchInput, { target: { value: 'Rosa' } });
   
     // Verifica que solo el producto filtrado se muestre

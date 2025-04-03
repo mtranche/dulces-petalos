@@ -11,7 +11,7 @@ function Card({ product }) {
 
       <img
         src={product.imgUrl}
-        alt={`Image of ${product.name}`}
+        alt={`Imagen de ${product.name}`}
         className="product-image"
       />
 
@@ -22,7 +22,7 @@ function Card({ product }) {
       <Link
         to={`/product/${product.id}`}
         className="go-to-button"
-        aria-label={`View details for ${product.name}`}
+        aria-label={`Ver detalles de ${product.name}`}
       >
         <svg
           viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ function Card({ product }) {
       </Link>
 
       {product.new && (
-        <div className="product-tag" aria-label="New product">
+        <div className="product-tag" aria-label="Nuevo">
           NUEVO
         </div>
       )}

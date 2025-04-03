@@ -29,7 +29,7 @@ describe('Card Component', () => {
   it('renders the product image with correct alt text', () => {
     renderWithRouter(<Card product={mockProduct} />);
 
-    const productImage = screen.getByRole('img', { name: /image of rosa/i });
+    const productImage = screen.getByRole('img', { name: /imagen de rosa/i });
     expect(productImage).toBeInTheDocument();
     expect(productImage).toHaveAttribute('src', mockProduct.imgUrl);
   });
@@ -44,7 +44,7 @@ describe('Card Component', () => {
   it('renders the link to the product details', () => {
     renderWithRouter(<Card product={mockProduct} />);
 
-    const productLink = screen.getByRole('link', { name: /view details for rosa/i });
+    const productLink = screen.getByRole('link', { name: /Ver detalles de/i });
     expect(productLink).toBeInTheDocument();
     expect(productLink).toHaveAttribute('href', `/product/${mockProduct.id}`);
   });
@@ -52,7 +52,7 @@ describe('Card Component', () => {
   it('renders the "NUEVO" tag if the product is new', () => {
     renderWithRouter(<Card product={mockProduct} />);
 
-    const newTag = screen.getByText(/nuevo/i);
+    const newTag = screen.getByText(/Nuevo/i);
     expect(newTag).toBeInTheDocument();
   });
 
@@ -61,7 +61,7 @@ describe('Card Component', () => {
 
     renderWithRouter(<Card product={nonNewProduct} />);
 
-    const newTag = screen.queryByText(/nuevo/i);
+    const newTag = screen.queryByText(/Nuevo/i);
     expect(newTag).not.toBeInTheDocument();
   });
 });

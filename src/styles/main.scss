@@ -22,7 +22,6 @@ body {
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0px; 
-  margin: 0;
   overflow-x: hidden;
 }
 
@@ -48,7 +47,6 @@ h4{
   font-family: Nunito;
   font-weight: 700;
   letter-spacing: 0px;
-  margin: 0;
 }
 
 h1 {
@@ -85,11 +83,6 @@ h6 {
   display: none;
 }
 
-p {
-  margin:0;
-  padding:0;
-}
-
 .http-error{  
   margin: auto;
   display: flex;
@@ -97,4 +90,9 @@ p {
   align-items: center;
   height: 100vh;
   color:$error-400;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

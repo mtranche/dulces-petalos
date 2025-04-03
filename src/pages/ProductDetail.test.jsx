@@ -22,13 +22,13 @@ describe('ProductDetail Component', () => {
   });
 
   it('renders error message when API call fails', async () => {
-    fetch.mockRejectedValueOnce(new Error('No se pudo cargar el producto'));
+    fetch.mockRejectedValueOnce(new Error('⚠️ Error al obtener el producto'));
 
     renderWithRouter(<ProductDetail />);
 
     const errorMessage = await screen.findByRole('alert');
     expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveTextContent('Error: No se pudo cargar el producto');
+    expect(errorMessage).toHaveTextContent('⚠️ Error al obtener el producto');
   });
 
   it('renders product details when API call succeeds', async () => {

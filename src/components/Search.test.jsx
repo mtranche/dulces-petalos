@@ -9,7 +9,7 @@ describe('Search Component', () => {
     render(<Search query={mockQuery} onChange={mockOnChange} />);
 
     // Verifica que el input esté presente
-    const searchInput = screen.getByRole('searchbox', { name: /buscar en nuestra tienda/i });
+    const searchInput = screen.getByRole('searchbox', { name: /busca en nuestra tienda/i });
     expect(searchInput).toBeInTheDocument();
     expect(searchInput).toHaveAttribute('placeholder', 'Busca en nuestra tienda');
     expect(searchInput).toHaveValue(mockQuery);
@@ -21,7 +21,7 @@ describe('Search Component', () => {
 
     render(<Search query={mockQuery} onChange={mockOnChange} />);
 
-    const searchInput = screen.getByRole('searchbox', { name: /buscar en nuestra tienda/i });
+    const searchInput = screen.getByRole('searchbox', { name: /busca en nuestra tienda/i });
 
     // Simula un cambio en el input
     fireEvent.change(searchInput, { target: { value: 'Tulipán' } });

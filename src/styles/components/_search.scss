@@ -1,14 +1,12 @@
 @use '../base/vars' as *;
 
 .search-bar {
-  box-sizing: border-box;
   display: flex;
   justify-content: center;
   margin-top: $space-3xl;
   margin-bottom: $space-3xl;
 
   input {
-    box-sizing: border-box;  
     flex: none;
     order: 0;
     flex-grow: 0;

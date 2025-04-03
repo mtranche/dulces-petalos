@@ -1,7 +1,6 @@
 @use '../base/vars' as *;
 
 .product-card {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,18 +18,13 @@
   
   .product-heading {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     align-items: flex-start;
     gap: 8px;
     height: 74px;
 
-    h4 {
-      margin: 0;
-    }
-
     .product-binomial {
       color: $neutral-800;
-      margin: 0;
     }
   }
 

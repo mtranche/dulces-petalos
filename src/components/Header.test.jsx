@@ -17,7 +17,7 @@ describe('Header Component', () => {
     expect(logo.getAttribute('src')).toMatch(/logo\.png$/i); // Verifica que termine en "logo.png"
 
     // Verifica que el logo esté envuelto en un enlace al inicio
-    const link = screen.getByRole('link', { name: /go to homepage/i });
+    const link = screen.getByRole('link', { name: /Ir a la página de inicio/i });
     expect(link).toBeInTheDocument();
     expect(link).toHaveAttribute('href', '/');
   });

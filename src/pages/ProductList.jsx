@@ -48,7 +48,7 @@ function ProductList() {
     <main className="container">
       <Header />
       <div className='content'>
-        <Search query={query} onChange={setQuery} aria-label="Buecar productos" />
+        <Search query={query} onChange={setQuery} aria-label="Buscar productos" />
 
         {isLoading && <p aria-live="polite">Cargando productos...</p>}
         

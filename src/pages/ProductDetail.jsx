@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Breadcrumb from '../components/Breadcrumb';
+import fallbackData from '../data/fallbackData.json';
 
 function ProductDetail() {
   const { id } = useParams();
@@ -12,13 +13,21 @@ function ProductDetail() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        setLoading(true);
+        setLoading(true);        
+        setError(null);
+
         const res = await fetch(`https://dulces-petalos.jakala.es/api/v1/product/${id}`);
-        if (!res.ok) throw new Error('No se pudo cargar el producto');
+        if (!res.ok) throw new Error('⚠️ Error al obtener el producto');
+
         const data = await res.json();
         setProduct(data);
       } catch (err) {
-        setError(err.message);
+        const fallback = fallbackData.find(item => item.id === id);
+        if (fallback) {
+          setProduct(fallback);
+        } else {
+          setError('⚠️ Error al obtener el producto');
+        }
       } finally {
         setLoading(false);
       }
@@ -28,11 +37,11 @@ function ProductDetail() {
   }, [id]);
 
   if (loading) return <p role="status">Cargando producto…</p>;
-  if (error) return <p role="alert">Error: {error}</p>;
-  if (!product) return null;
+  if (!product && error) return <p role="alert">{error}</p>;
 
   return (
     <main className="container" role="main" aria-labelledby="product-title">
+      {error && <p role="alert">{error} - Mostrando datos locales</p>}
       <Header />
       <div className="product-detail">        
         <Breadcrumb name={product.name} />
@@ -53,7 +62,7 @@ function ProductDetail() {
               Añadir al carrito
             </button>
           </div>
-          </div>
+        </div>
       </div>
     </main>
   );
