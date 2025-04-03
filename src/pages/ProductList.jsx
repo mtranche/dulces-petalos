@@ -56,7 +56,7 @@ function ProductList() {
         
         {error && (
           <div className="fallbak-message-product-grid" role='alert' aria-live="assertive">
-            <h4 className='fallback-message'> {error}. -  Mostrando datos locales</h4>
+            <h4 className='fallback-message'> {error} -  Mostrando datos locales</h4>
             <div className="product-grid">
               {filtered.map((product) => (
                 <Card key={product.id} product={product} />
