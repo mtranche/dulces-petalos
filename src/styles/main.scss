@@ -91,7 +91,9 @@ h6 {
   height: 100vh;
   color:$error-400;
 }
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
