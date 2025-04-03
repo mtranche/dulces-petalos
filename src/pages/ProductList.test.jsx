@@ -108,7 +108,7 @@ it('uses fallback data when API call fails', async () => {
 
   // Verify that fallback data is used
   await waitFor(() => {
-    const fallbackProduct = screen.getByRole('heading', { name: /Orquídea/i }); // Match a valid product name
+    const fallbackProduct = screen.getByRole('heading', { name: /Orquídea/i }); 
     expect(fallbackProduct).toBeInTheDocument();
   });
 });
