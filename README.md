@@ -93,7 +93,7 @@ Esto levantará el proyecto en http://localhost:5173 (o el puerto que indique Vi
 El proyecto utiliza Vitest. Para ejecutar los tests:
 
 ```bash
-npm vitest
+npx vitest
 ```
 
 Para ver los tests en modo interactivo (watch mode):
