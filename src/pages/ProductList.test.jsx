@@ -3,6 +3,18 @@ import { BrowserRouter } from 'react-router-dom';
 import { vi } from 'vitest';
 import ProductList from './ProductList';
 
+vi.mock('../data/fallbackData.json', () => ({
+  default: [
+    {
+      id: '1',
+      name: 'Orquídea',
+      binomialName: 'Ophrys tenthredinifera',
+      price: 4.95,
+      imgUrl: 'https://example.com/orquidea.jpg',
+    },
+  ],
+}));
+
 // Mock para fetch
 global.fetch = vi.fn();
 
@@ -22,13 +34,13 @@ describe('ProductList Component', () => {
   });
 
   it('renders error message when API call fails', async () => {
-    fetch.mockRejectedValueOnce(new Error('API Error'));
+    fetch.mockRejectedValueOnce(new Error('Error al obtener datos de la API'));
 
     renderWithRouter(<ProductList />);
 
     const errorMessage = await screen.findByRole('alert');
     expect(errorMessage).toBeInTheDocument();
-    expect(errorMessage).toHaveTextContent('⚠️ API Error');
+    expect(errorMessage).toHaveTextContent('⚠️ Error al obtener datos de la API');
   });
 
   it('renders products when API call succeeds', async () => {
@@ -97,18 +109,18 @@ it('uses fallback data when API call fails', async () => {
     return render(<BrowserRouter>{ui}</BrowserRouter>);
   };
 
-  fetch.mockRejectedValueOnce(new Error('API Error'));
+  fetch.mockRejectedValueOnce(new Error('Error al obtener datos de la API'));
 
   renderWithRouter(<ProductList />);
 
-  // Wait for the error message to appear
+  // Espera a que el mensaje de error aparezca
   const errorMessage = await screen.findByRole('alert');
   expect(errorMessage).toBeInTheDocument();
-  expect(errorMessage).toHaveTextContent('⚠️ API Error');
+  expect(errorMessage).toHaveTextContent('⚠️ Error al obtener datos de la API');
 
-  // Verify that fallback data is used
+  // Verifica que los datos de fallback se usen
   await waitFor(() => {
-    const fallbackProduct = screen.getByRole('heading', { name: /Orquídea/i }); 
+    const fallbackProduct = screen.getByRole('heading', { name: /Orquídea/i });
     expect(fallbackProduct).toBeInTheDocument();
   });
 });

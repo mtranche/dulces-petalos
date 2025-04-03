@@ -25,7 +25,7 @@ function ProductList() {
         const data = await response.json();
         setProducts(data);
       } catch (error) {        
-          setError('⚠️ API Error');
+          setError('⚠️ Error al obtener datos de la API');
           setProducts(fallbackData);
           setUsingLocalData(true);
       } finally {
@@ -50,13 +50,22 @@ function ProductList() {
     <main className="container">
       <Header />
       <div className='content'>
-        <Search query={query} onChange={setQuery} aria-label="Search products" />
+        <Search query={query} onChange={setQuery} aria-label="Buecar productos" />
 
         {isLoading && <p aria-live="polite">Cargando productos...</p>}
         
-        {error && <p className='fallback-message' style={{ color: '#b80000' }} role="alert">⚠️ {error}</p>}
+        {error && (
+          <div className="fallbak-message-product-grid" role='alert' aria-live="assertive">
+            <h4 className='fallback-message'> {error}. -  Mostrando datos locales</h4>
+            <div className="product-grid">
+              {filtered.map((product) => (
+                <Card key={product.id} product={product} />
+              ))}
+            </div>
+          </div>      
+        )}
 
-        {!isLoading &&  (
+        {!isLoading && !error && (
           <div className="product-grid">
             {filtered.map((product) => (
               <Card key={product.id} product={product} />
