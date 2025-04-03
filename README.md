@@ -113,26 +113,63 @@ npx vitest --ui
 ## 📁 Estructura del proyecto
 
 ```plaintext
-dulces-petalos/
+DULCES-PETALOS/
 │
-├── public/              → Archivos estáticos (opcional)
-├── docs/                → Documentación del proyecto (PDF, imágenes...)
-├── index.html           → HTML principal 
-├── package.json         → Configuración de npm y scripts
-├── vite.config.js       → Configuración de Vite
-├── README.md
+├── public/                    → Archivos estáticos accesibles públicamente
+│   ├── img/                   → Imágenes visibles directamente desde el navegador
+│   │   ├── aloeVera.jpeg
+│   │   ├── petuniaAxillaris.jpeg
+│   │   └── pteridiumAquilinum.jpeg│  
+|   
 │
-└── src/
-    ├── assets/              → Imágenes y logos
-    ├── components/          → Componentes reutilizables (Card, Header, Search, etc.)
-    ├── pages/               → Vistas principales (ProductList, ProductDetail)
-    ├── styles/              → Estilos organizados por base / components / pages
-    │   ├── base/            → Tokens, variables, tipografía
-    │   ├── components/      → Estilos de cada componente
-    │   └── pages/           → Estilos específicos por página
-    ├── App.jsx              → Componente principal con routing
-    └── main.jsx             → Punto de entrada (React + Vite)
-```
+├── src/                       → Código fuente del proyecto
+│   ├── assets/                → Recursos internos como imágenes o SVGs (no públicas)
+│   │   ├── Logo.png
+│   │   ├── Search.png
+│   │   └── Vector.svg
+│   │
+│   ├── components/            → Componentes reutilizables de la UI
+│   │   ├── Breadcrumb.jsx
+│   │   ├── Card.jsx
+│   │   ├── Header.jsx
+│   │   ├── Search.jsx
+│   │   ├── Breadcrumb.test.jsx
+│   │   ├── Card.test.jsx
+│   │   ├── Header.test.jsx
+│   │   └── Search.test.jsx
+│   │
+│   ├── data/
+│   │   └── fallbackData.json  → Datos de respaldo si la API falla
+│   │
+│   ├── pages/                 → Vistas principales del sitio
+│   │   ├── ProductDetail.jsx
+│   │   ├── ProductList.jsx
+│   │   ├── ProductDetail.test.jsx
+│   │   └── ProductList.test.jsx
+│   │
+│   ├── styles/                → Estilos SCSS organizados por tipo
+│   │   ├── base/              → Variables, resets, tipografía (_vars.scss)
+│   │   ├── components/        → Estilos de cada componente
+│   │   │   ├── _breadcrumb.scss
+│   │   │   ├── _card.scss
+│   │   │   ├── _header.scss
+│   │   │   └── _search.scss
+│   │   ├── pages/             → Estilos por cada vista
+│   │   │   ├── _productDetail.scss
+│   │   │   └── _productList.scss
+│   │   └── main.scss          → Importa todos los estilos
+│   │
+│   ├── App.jsx                → Componente principal con enrutado
+│   ├── App.test.jsx           → Pruebas de App
+│   ├── index.scss             → Estilos globales base
+│   └── main.jsx               → Punto de entrada de React y Vite
+│
+├── index.html                 → HTML base para montar React
+├── vite.config.js             → Configuración de Vite
+├── package.json               → Dependencias y scripts npm
+├── report.json                → Informe de cobertura de tests
+└── README.md                  → Documentación principal del proyecto
+
 
 ---
 
