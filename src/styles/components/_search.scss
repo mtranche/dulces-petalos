@@ -23,7 +23,7 @@
     
   }
 }
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-sm) {
   .search-bar {
     justify-content: center;
 

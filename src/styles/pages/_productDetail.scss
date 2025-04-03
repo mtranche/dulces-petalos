@@ -68,7 +68,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-sm) {
   .product-detail {
     padding: 0 $space-md;   
 
@@ -116,7 +116,7 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1025px) {
+@media (min-width: $breakpoint-sm) and (max-width: $breakpoint-md) {
   .product-detail {
     width: 80%;
   }
