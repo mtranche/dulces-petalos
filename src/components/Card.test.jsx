@@ -2,6 +2,10 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Card from './Card';
 
+const renderWithRouter = (ui) => {
+  return render(<BrowserRouter>{ui}</BrowserRouter>);
+};
+
 describe('Card Component', () => {
   const mockProduct = {
     id: 1,
@@ -13,25 +17,17 @@ describe('Card Component', () => {
   };
 
   it('renders the product name and binomial name', () => {
-    render(
-      <BrowserRouter>
-        <Card product={mockProduct} />
-      </BrowserRouter>
-    );  
-    
+    renderWithRouter(<Card product={mockProduct} />);
+
     const productName = screen.getByRole('heading', { name: /rosa/i });
-    expect(productName).toBeInTheDocument();  
-    
+    expect(productName).toBeInTheDocument();
+
     const binomialName = screen.getByText(/rosa gallica/i);
     expect(binomialName).toBeInTheDocument();
   });
 
   it('renders the product image with correct alt text', () => {
-    render(
-      <BrowserRouter>
-        <Card product={mockProduct} />
-      </BrowserRouter>
-    );
+    renderWithRouter(<Card product={mockProduct} />);
 
     const productImage = screen.getByRole('img', { name: /image of rosa/i });
     expect(productImage).toBeInTheDocument();
@@ -39,22 +35,14 @@ describe('Card Component', () => {
   });
 
   it('renders the product price', () => {
-    render(
-      <BrowserRouter>
-        <Card product={mockProduct} />
-      </BrowserRouter>
-    );
+    renderWithRouter(<Card product={mockProduct} />);
 
     const productPrice = screen.getByText(/€12.99/i);
     expect(productPrice).toBeInTheDocument();
   });
 
   it('renders the link to the product details', () => {
-    render(
-      <BrowserRouter>
-        <Card product={mockProduct} />
-      </BrowserRouter>
-    );
+    renderWithRouter(<Card product={mockProduct} />);
 
     const productLink = screen.getByRole('link', { name: /view details for rosa/i });
     expect(productLink).toBeInTheDocument();
@@ -62,11 +50,7 @@ describe('Card Component', () => {
   });
 
   it('renders the "NUEVO" tag if the product is new', () => {
-    render(
-      <BrowserRouter>
-        <Card product={mockProduct} />
-      </BrowserRouter>
-    );
+    renderWithRouter(<Card product={mockProduct} />);
 
     const newTag = screen.getByText(/nuevo/i);
     expect(newTag).toBeInTheDocument();
@@ -75,11 +59,7 @@ describe('Card Component', () => {
   it('does not render the "NUEVO" tag if the product is not new', () => {
     const nonNewProduct = { ...mockProduct, new: false };
 
-    render(
-      <BrowserRouter>
-        <Card product={nonNewProduct} />
-      </BrowserRouter>
-    );
+    renderWithRouter(<Card product={nonNewProduct} />);
 
     const newTag = screen.queryByText(/nuevo/i);
     expect(newTag).not.toBeInTheDocument();

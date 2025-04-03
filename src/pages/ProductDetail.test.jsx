@@ -57,7 +57,7 @@ describe('ProductDetail Component', () => {
     // Verifica que los detalles del producto se rendericen correctamente
     expect(screen.getByText(/rosa gallica/i)).toBeInTheDocument();
     expect(screen.getByText(/€12.99/i)).toBeInTheDocument();
-    expect(screen.getByText(/regar.*por semana/i)).toBeInTheDocument(); // Selector más flexible
+    expect(screen.getByText(/regar.*por semana/i)).toBeInTheDocument(); 
     expect(screen.getByText(/fertilizar con orgánico/i)).toBeInTheDocument();
   
     // Verifica que la imagen del producto se renderice correctamente
