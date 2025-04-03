@@ -49,7 +49,7 @@ function ProductDetail() {
               <li>· Regar {product.wateringsPerWeek} vez{product.wateringsPerWeek > 1 && 'es'} por semana</li>
               <li>· Fertilizar con {product.fertilizerType}</li>
             </ul>
-            <button className="add-to-cart" aria-label={`Añadir ${product.name} al carrito`}>
+            <button className="add-to-cart" aria-label={`Añadir ${product.name} al carrito`} onClick={() => alert(`Añadido ${product.name} al carrito`)}>
               Añadir al carrito
             </button>
           </div>

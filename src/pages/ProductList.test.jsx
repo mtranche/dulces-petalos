@@ -91,3 +91,24 @@ describe('ProductList Component', () => {
     });
   });
 });
+
+it('uses fallback data when API call fails', async () => {
+  const renderWithRouter = (ui) => {
+    return render(<BrowserRouter>{ui}</BrowserRouter>);
+  };
+
+  fetch.mockRejectedValueOnce(new Error('API Error'));
+
+  renderWithRouter(<ProductList />);
+
+  // Wait for the error message to appear
+  const errorMessage = await screen.findByRole('alert');
+  expect(errorMessage).toBeInTheDocument();
+  expect(errorMessage).toHaveTextContent('⚠️ API Error');
+
+  // Verify that fallback data is used
+  await waitFor(() => {
+    const fallbackProduct = screen.getByRole('heading', { name: /Orquídea/i }); // Match a valid product name
+    expect(fallbackProduct).toBeInTheDocument();
+  });
+});

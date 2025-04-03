@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Card from '../components/Card';
+import fallbackData from '../data/fallbackData.json';
 
 function ProductList() {
   const [products, setProducts] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [usingLocalData, setUsingLocalData] = useState(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -16,12 +19,15 @@ function ProductList() {
         setError(null);
         const response = await fetch('https://dulces-petalos.jakala.es/api/v1/product');
         if (!response.ok) {
+          setError(true);
           throw new Error(`Error ${response.status}: ${response.statusText}`);
         }
         const data = await response.json();
         setProducts(data);
-      } catch (error) {
-        setError(error.message || 'Ocurrió un error al cargar los productos.');
+      } catch (error) {        
+          setError('⚠️ API Error');
+          setProducts(fallbackData);
+          setUsingLocalData(true);
       } finally {
         setIsLoading(false);
       }
@@ -30,9 +36,15 @@ function ProductList() {
     fetchProducts();
   }, []);
 
-  const filteredProducts = products.filter((p) =>
-    `${p.name} ${p.binomialName}`.toLowerCase().includes(query.toLowerCase())
-  );
+  useEffect(() => {
+    const lowerQuery = query.toLowerCase();
+    setFiltered(
+      products.filter((p) =>
+        p.name.toLowerCase().includes(lowerQuery) ||
+        p.binomialName.toLowerCase().includes(lowerQuery)
+      )
+    );
+  }, [query, products]);
 
   return (
     <main className="container">
@@ -41,12 +53,13 @@ function ProductList() {
         <Search query={query} onChange={setQuery} aria-label="Search products" />
 
         {isLoading && <p aria-live="polite">Cargando productos...</p>}
-        {error && <p style={{ color: '#b80000' }} role="alert">⚠️ {error}</p>}
+        
+        {error && <p className='fallback-message' style={{ color: '#b80000' }} role="alert">⚠️ {error}</p>}
 
-        {!isLoading && !error && (
-          <div className="product-grid" role="region" aria-label="Product list">
-            {filteredProducts.map((p) => (
-              <Card key={p.id} product={p} />
+        {!isLoading &&  (
+          <div className="product-grid">
+            {filtered.map((product) => (
+              <Card key={product.id} product={product} />
             ))}
           </div>
         )}
